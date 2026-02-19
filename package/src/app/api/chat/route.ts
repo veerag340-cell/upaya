@@ -1,20 +1,18 @@
 import { NextResponse } from "next/server"
 import { Resend } from "resend"
-//import twilio from "twilio"
+// import twilio from "twilio"
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
-// const client = twilio(
-//   process.env.TWILIO_SID!,
-//   process.env.TWILIO_TOKEN!
-// )
+// ❌ REMOVE THIS LINE FROM TOP
+// const resend = new Resend(process.env.RESEND_API_KEY)
 
 let step = 0
 let lead:any = {}
 
-export async function POST(req:Request){
+export async function POST(req: Request){
 
-  const {message} = await req.json()
+  const resend = new Resend(process.env.RESEND_API_KEY) // ✅ MOVE HERE
+
+  const { message } = await req.json()
 
   let reply = "Tell me more 🙂"
 
@@ -39,9 +37,6 @@ export async function POST(req:Request){
 
       console.log("NEW LEAD RECEIVED:", lead)
 
-      // ======================
-      // 📧 SEND EMAIL
-      // ======================
       await resend.emails.send({
         from: "onboarding@resend.dev",
         to: "veerag340@gmail.com",
@@ -52,19 +47,6 @@ export async function POST(req:Request){
           Phone: ${lead.phone}
         `
       })
-
-      // ======================
-      // 💬 SEND WHATSAPP
-      // ======================
-//       await client.messages.create({
-//         from: process.env.TWILIO_WHATSAPP_FROM!,
-//         to: process.env.TWILIO_WHATSAPP_TO!,
-//         body: `🚀 New UPAYA Lead
-
-// Name: ${lead.name}
-// Email: ${lead.email}
-// Phone: ${lead.phone}`
-//       })
 
     } catch (error) {
       console.error("SEND ERROR:", error)
