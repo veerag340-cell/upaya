@@ -1,13 +1,13 @@
 import { NextResponse } from "next/server"
 import { Resend } from "resend"
-import twilio from "twilio"
+//import twilio from "twilio"
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
-const client = twilio(
-  process.env.TWILIO_SID!,
-  process.env.TWILIO_TOKEN!
-)
+// const client = twilio(
+//   process.env.TWILIO_SID!,
+//   process.env.TWILIO_TOKEN!
+// )
 
 let step = 0
 let lead:any = {}
@@ -56,15 +56,15 @@ export async function POST(req:Request){
       // ======================
       // 💬 SEND WHATSAPP
       // ======================
-      await client.messages.create({
-        from: process.env.TWILIO_WHATSAPP_FROM!,
-        to: process.env.TWILIO_WHATSAPP_TO!,
-        body: `🚀 New UPAYA Lead
+//       await client.messages.create({
+//         from: process.env.TWILIO_WHATSAPP_FROM!,
+//         to: process.env.TWILIO_WHATSAPP_TO!,
+//         body: `🚀 New UPAYA Lead
 
-Name: ${lead.name}
-Email: ${lead.email}
-Phone: ${lead.phone}`
-      })
+// Name: ${lead.name}
+// Email: ${lead.email}
+// Phone: ${lead.phone}`
+//       })
 
     } catch (error) {
       console.error("SEND ERROR:", error)
