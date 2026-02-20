@@ -1,12 +1,13 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
 import { ThemeProvider } from "next-themes";
-import ScrollToTop from '@/components/ScrollToTop';
-import ChatBot from "@/components/ChatBot"; // ✅ NEW IMPORT
+import ScrollToTop from "@/components/ScrollToTop";
+import ChatBot from "@/components/ChatBot";
 import Aoscompo from "@/utils/aos";
-import NextTopLoader from 'nextjs-toploader';
+import NextTopLoader from "nextjs-toploader";
 import SessionProviderComp from "@/components/nextauth/SessionProvider";
 import { AuthDialogProvider } from "./context/AuthDialogContext";
 
@@ -14,10 +15,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
-  session,
 }: Readonly<{
   children: React.ReactNode;
-  session:any
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -25,7 +24,8 @@ export default function RootLayout({
         <NextTopLoader />
 
         <AuthDialogProvider>
-          <SessionProviderComp session={session}>
+          {/* ✅ REMOVE session prop here */}
+          <SessionProviderComp>
             <ThemeProvider
               attribute="class"
               enableSystem={true}
@@ -39,12 +39,10 @@ export default function RootLayout({
 
               {/* Floating Widgets */}
               <ScrollToTop />
-              <ChatBot /> 
-              
+              <ChatBot />
             </ThemeProvider>
           </SessionProviderComp>
         </AuthDialogProvider>
-
       </body>
     </html>
   );
