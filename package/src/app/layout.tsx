@@ -39,7 +39,7 @@ export default function RootLayout({
 
               {/* Floating Widgets */}
               <ScrollToTop />
-              {/* <ChatBot /> ✅ NEW CHATBOT ADDED */}
+              <ChatBot /> ✅ NEW CHATBOT ADDED
               
             </ThemeProvider>
           </SessionProviderComp>
