@@ -59,7 +59,7 @@ const Hero = () => {
       </section>
 
       {/* ================= HOME PRICING SECTION ================= */}
-      <section className="py-24 bg-section">
+      {/* <section className="py-24 bg-section">
         <div className="container mx-auto max-w-6xl px-4 text-center">
 
           <span className="text-primary text-xs font-semibold tracking-[0.35em] uppercase">
@@ -76,7 +76,7 @@ const Hero = () => {
 
           <div className="grid md:grid-cols-3 gap-8 mt-14">
 
-            {/* BASIC */}
+            
             <div className="bg-white border border-border rounded-2xl p-8 hover:shadow-lg transition">
               <h3 className="text-xl font-semibold text-midnight_text">Basic</h3>
 
@@ -91,7 +91,7 @@ const Hero = () => {
               </p>
             </div>
 
-            {/* STANDARD */}
+             
             <div className="bg-white border-2 border-primary rounded-2xl p-8 shadow-xl scale-[1.03]">
               <span className="text-xs bg-primary text-white px-3 py-1 rounded-full">
                 Most Popular
@@ -112,7 +112,7 @@ const Hero = () => {
               </p>
             </div>
 
-            {/* PREMIUM */}
+             
             <div className="bg-white border border-border rounded-2xl p-8 hover:shadow-lg transition">
               <h3 className="text-xl font-semibold text-midnight_text">Premium</h3>
 
@@ -137,7 +137,7 @@ const Hero = () => {
           </Link>
 
         </div>
-      </section>
+      </section> */}
     </>
   )
 }
