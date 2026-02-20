@@ -251,13 +251,13 @@ export const PackageStructure = () => {
                                             <p className='text-xl text-black dark:text-white/50'>
                                               |—
                                             </p>
-                                            <span className='font-medium text-midnight_text dark:text-white/50'>
+                                            {/* <span className='font-medium text-midnight_text dark:text-white/50'>
                                               <Icon
                                                 icon='tabler:folder'
                                                 className='text-primary text-base inline-block me-2'
                                               />
                                               documentation
-                                            </span>
+                                            </span> */}
                                           </div>
                                         </li>
                                         {/* <li className='py-2'>
