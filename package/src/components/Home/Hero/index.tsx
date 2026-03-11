@@ -1,145 +1,255 @@
 'use client'
-import Image from 'next/image'
-import Link from 'next/link'
 
-const Hero = () => {
-  return (
-    <>
-      {/* ================= HERO SECTION ================= */}
-      <section className='relative md:pt-44 pt-28 bg-white dark:bg-darklight bg-cover text-white'>
-        <div className='container mx-auto max-w-6xl px-4 grid grid-cols-12 gap-4 relative z-10'>
-          
-          {/* LEFT CONTENT */}
-          <div
-            className='md:col-span-6 col-span-12 p-4 md:px-4 px-0 space-y-4 flex flex-col items-start justify-center'
-            data-aos='fade-right'
-          >
-            <div className='flex gap-2 items-center'>
-              <span className='w-3 h-3 rounded-full bg-success'></span>
-              <span className='font-medium text-midnight_text text-sm dark:text-white/50'>
-                career support
-              </span>
-            </div>
+import { useEffect, useState } from "react"
+import Image from "next/image"
+import Link from "next/link"
+import { motion } from "framer-motion"
 
-            <h1 className='text-midnight_text font-bold dark:text-white text-4xl md:text-5xl md:leading-[1.15]'>
-              Your Job Search, Handled Until You Get Hired
-            </h1>
-
-            <p className='text-grey dark:text-white/70 text-xl font-semibold'>
-              We update your resume, manually apply for relevant jobs based on your skills,
-              follow up with recruiters, and support you until placement.
-            </p>
-
-            <div className='flex gap-3 flex-wrap'>
-              <a className='py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 px-8'>
-                Apply Jobs for Me
-              </a>
-
-              <a className='py-3 bg-blue-100 text-blue-600 rounded-md hover:bg-blue-200 transition duration-300 px-8 font-medium'>
-                Get Career Support
-              </a>
-            </div>
-          </div>
-
-          {/* RIGHT IMAGE */}
-          <div className="md:col-span-6 col-span-12 relative">
-            <div className="relative w-full rounded-2xl overflow-hidden shadow-xl bg-white">
-              <Image
-                src="/images/hero/hero-image.png"
-                alt="Professional at work"
-                width={900}
-                height={900}
-                quality={100}
-                priority
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ================= HOME PRICING SECTION ================= */}
-      {/* <section className="py-24 bg-section">
-        <div className="container mx-auto max-w-6xl px-4 text-center">
-
-          <span className="text-primary text-xs font-semibold tracking-[0.35em] uppercase">
-            Pricing
-          </span>
-
-          <h2 className="mt-4 text-[30px] md:text-[36px] font-semibold text-midnight_text">
-            Simple Plans For Your Job Search
-          </h2>
-
-          <p className="text-grey mt-4 max-w-xl mx-auto">
-            Choose a plan that helps you get hired faster with real human support.
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-8 mt-14">
-
-            
-            <div className="bg-white border border-border rounded-2xl p-8 hover:shadow-lg transition">
-              <h3 className="text-xl font-semibold text-midnight_text">Basic</h3>
-
-              <div className="flex items-end justify-center gap-1 mt-4">
-                <span className="text-lg text-grey">₹</span>
-                <span className="text-3xl font-semibold text-midnight_text">199</span>
-                <span className="text-sm text-grey mb-1">/month</span>
-              </div>
-
-              <p className="text-grey mt-4 text-sm">
-                Job application support & resume review.
-              </p>
-            </div>
-
-             
-            <div className="bg-white border-2 border-primary rounded-2xl p-8 shadow-xl scale-[1.03]">
-              <span className="text-xs bg-primary text-white px-3 py-1 rounded-full">
-                Most Popular
-              </span>
-
-              <h3 className="text-xl font-semibold text-midnight_text mt-3">
-                Standard
-              </h3>
-
-              <div className="flex items-end justify-center gap-1 mt-4">
-                <span className="text-lg text-grey">₹</span>
-                <span className="text-3xl font-semibold text-midnight_text">299</span>
-                <span className="text-sm text-grey mb-1">/month</span>
-              </div>
-
-              <p className="text-grey mt-4 text-sm">
-                Interview prep & recruiter follow-ups.
-              </p>
-            </div>
-
-             
-            <div className="bg-white border border-border rounded-2xl p-8 hover:shadow-lg transition">
-              <h3 className="text-xl font-semibold text-midnight_text">Premium</h3>
-
-              <div className="flex items-end justify-center gap-1 mt-4">
-                <span className="text-lg text-grey">₹</span>
-                <span className="text-3xl font-semibold text-midnight_text">399</span>
-                <span className="text-sm text-grey mb-1">/month</span>
-              </div>
-
-              <p className="text-grey mt-4 text-sm">
-                End-to-end job placement assistance.
-              </p>
-            </div>
-
-          </div>
-
-          <Link
-            href="/pricing"
-            className="inline-block mt-12 bg-primary text-white px-8 py-3 rounded-full font-semibold hover:scale-[1.03] transition"
-          >
-            View Full Pricing
-          </Link>
-
-        </div>
-      </section> */}
-    </>
-  )
+const container = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.18 } }
 }
 
-export default Hero
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+}
+
+/* ================= COUNTER ================= */
+
+function Counter({ target }: { target: number }) {
+
+  const [count, setCount] = useState(0)
+
+  useEffect(() => {
+
+    let start = 0
+
+    const interval = setInterval(() => {
+
+      start += Math.ceil(target / 40)
+
+      if (start >= target) {
+        start = target
+        clearInterval(interval)
+      }
+
+      setCount(start)
+
+    }, 40)
+
+    return () => clearInterval(interval)
+
+  }, [target])
+
+  return <span>{count}+</span>
+}
+
+/* ================= HERO ================= */
+
+export default function Hero() {
+
+  const [rotateX, setRotateX] = useState(0)
+  const [rotateY, setRotateY] = useState(0)
+
+  const handleMouseMove = (e: any) => {
+
+    const rect = e.currentTarget.getBoundingClientRect()
+
+    const x = e.clientX - rect.left
+    const y = e.clientY - rect.top
+
+    const centerX = rect.width / 2
+    const centerY = rect.height / 2
+
+    setRotateY(((x - centerX) / centerX) * 8)
+    setRotateX(((centerY - y) / centerY) * 8)
+  }
+
+  const handleLeave = () => {
+    setRotateX(0)
+    setRotateY(0)
+  }
+
+  return (
+
+    <section className="relative md:pt-36 pt-24 pb-20 overflow-hidden">
+
+      {/* Background Gradient */}
+      <div className="absolute inset-0 -z-20 bg-gradient-to-b from-white via-blue-50 to-white"></div>
+
+      {/* Light Blobs */}
+      <div className="absolute inset-0 -z-10">
+
+        <motion.div
+          animate={{ x: [0, 80, 0], y: [0, 60, 0] }}
+          transition={{ duration: 20, repeat: Infinity }}
+          className="absolute -top-32 -left-32 w-[520px] h-[520px] bg-blue-400/20 blur-[140px] rounded-full"
+        />
+
+        <motion.div
+          animate={{ x: [0, -80, 0], y: [0, -60, 0] }}
+          transition={{ duration: 24, repeat: Infinity }}
+          className="absolute -bottom-40 -right-40 w-[520px] h-[520px] bg-indigo-400/20 blur-[140px] rounded-full"
+        />
+
+      </div>
+
+      {/* Grid Background */}
+      <div className="absolute inset-0 -z-10 opacity-[0.05] bg-[linear-gradient(#000_1px,transparent_1px),linear-gradient(90deg,#000_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+
+      <div className="container mx-auto max-w-6xl px-4 grid md:grid-cols-12 gap-14 items-center">
+
+        {/* LEFT SIDE */}
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="md:col-span-6 space-y-7 max-w-[560px]"
+        >
+
+          {/* Label */}
+          <motion.div variants={fadeUp} className="flex items-center gap-2">
+            <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
+            <span className="text-sm text-gray-500 font-medium">
+              Career Support Platform
+            </span>
+          </motion.div>
+
+          {/* Title */}
+          <motion.h1
+            variants={fadeUp}
+            className="text-[44px] md:text-[58px] font-bold leading-[1.05]"
+          >
+            Your Job Search,
+            <span className="block bg-gradient-to-r from-blue-600 to-indigo-500 bg-clip-text text-transparent">
+              Handled Until You Get Hired
+            </span>
+          </motion.h1>
+
+          {/* Description */}
+          <motion.p
+            variants={fadeUp}
+            className="text-gray-600 text-[18px]"
+          >
+            We optimize your resume, apply to relevant jobs, track recruiters,
+            and support you until you land the job you deserve.
+          </motion.p>
+
+          {/* Buttons */}
+          <motion.div variants={fadeUp} className="flex gap-4 flex-wrap">
+
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.96 }}>
+              <Link
+                href="#"
+                className="px-9 py-3 rounded-xl bg-blue-600 text-white font-semibold shadow-lg hover:shadow-xl transition"
+              >
+                Apply Jobs for Me
+              </Link>
+            </motion.div>
+
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.96 }}>
+              <Link
+                href="#"
+                className="px-9 py-3 rounded-xl backdrop-blur-lg bg-white/70 border border-gray-200 text-blue-600 font-semibold"
+              >
+                Get Career Support
+              </Link>
+            </motion.div>
+
+          </motion.div>
+
+          {/* Counters */}
+          <div className="flex gap-8 pt-4 text-sm text-gray-600">
+
+            <div>
+              <p className="text-xl font-bold text-blue-600">
+                <Counter target={1200} />
+              </p>
+              Candidates Placed
+            </div>
+
+            <div>
+              <p className="text-xl font-bold text-blue-600">
+                <Counter target={5000} />
+              </p>
+              Interviews Scheduled
+            </div>
+
+          </div>
+
+          {/* Trust badges */}
+          <motion.div variants={fadeUp} className="flex gap-3 flex-wrap pt-3">
+
+            <span className="px-4 py-2 bg-white/70 backdrop-blur rounded-full shadow-sm text-sm">
+              ✔ Real Human Support
+            </span>
+
+            <span className="px-4 py-2 bg-white/70 backdrop-blur rounded-full shadow-sm text-sm">
+              ✔ Placement Focused
+            </span>
+
+            <span className="px-4 py-2 bg-white/70 backdrop-blur rounded-full shadow-sm text-sm">
+              ✔ Resume Optimization
+            </span>
+
+          </motion.div>
+
+        </motion.div>
+
+        {/* RIGHT SIDE */}
+        <motion.div
+          initial={{ opacity: 0, x: 80 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="md:col-span-6 relative flex justify-center"
+        >
+
+          {/* Floating Card */}
+          <motion.div
+            animate={{ y: [0, -12, 0] }}
+            transition={{ duration: 4, repeat: Infinity }}
+            className="absolute -top-8 bg-white px-5 py-3 rounded-xl shadow-xl text-sm z-20"
+          >
+            🎉 Candidate Placed
+            <p className="text-xs text-gray-500">
+              Software Engineer @ Stripe
+            </p>
+          </motion.div>
+
+          {/* 3D Parallax Image */}
+          <div
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleLeave}
+            className="perspective-[1200px]"
+          >
+
+            <motion.div
+              animate={{ rotateX, rotateY }}
+              transition={{ type: "spring", stiffness: 120, damping: 15 }}
+              className="relative rounded-3xl overflow-hidden shadow-2xl max-w-[520px] bg-white"
+            >
+
+              <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-transparent z-10"></div>
+
+              <Image
+                src="/images/hero/upaya-success.png"
+                alt="Job placement success"
+                width={900}
+                height={700}
+                priority
+                className="w-full h-auto object-cover"
+              />
+
+            </motion.div>
+
+          </div>
+
+        </motion.div>
+
+      </div>
+
+    </section>
+
+  )
+}

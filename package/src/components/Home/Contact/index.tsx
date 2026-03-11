@@ -1,157 +1,131 @@
-import React from 'react'
-import Image from 'next/image'
+import React from "react";
+import Image from "next/image";
 
 const Contactform = () => {
   return (
-    <section className='overflow-x-hidden bg-darkmode dark:bg-darklight'>
-      <div className='container mx-auto max-w-6xl px-4'>
-        <div className='grid md:grid-cols-12 grid-cols-1 md:gap-7 gap-0'>
-          <div
-            className='row-start-1 col-start-1 row-end-2 md:col-end-7 col-end-12'
-            data-aos='fade-left'
-            data-aos-delay='200'
-            data-aos-duration='1000'>
-            <div className='flex gap-2 items-center justify-start'>
-              <span className='w-3 h-3 rounded-full bg-success'></span>
-              <span className='font-medium text-sm text-white'>
+    <section className="relative overflow-x-hidden bg-[#081c3a]">
+      <div className="container mx-auto max-w-6xl px-4 py-24">
+        <div className="grid md:grid-cols-12 grid-cols-1 md:gap-14 gap-10 items-center">
+
+          {/* ================= LEFT CONTENT ================= */}
+          <div className="md:col-span-6 text-white">
+            <div className="flex items-center gap-2">
+              <span className="w-3 h-3 rounded-full bg-green-400 animate-pulse"></span>
+              <span className="text-sm font-medium text-white/80">
                 Career Support
               </span>
             </div>
-            <h2 className='sm:text-4xl text-[28px] leading-tight font-bold text-white py-12'>
+
+            <h2 className="text-4xl leading-tight font-bold py-10">
               Let’s Help You Get Interview Calls
             </h2>
-            <div className='grid grid-cols-6 pb-12 border-b border-dark_border '>
-              <div className='col-span-3'>
-                <span className='text-white/50 text-lg'>Phone</span>
-                <p className='bg-transparent border-0 text-white text-lg'>
+
+            <div className="grid grid-cols-2 gap-y-8 pb-10 border-b border-white/10">
+              <div>
+                <p className="text-white/50 text-sm">Phone</p>
+                <p className="text-lg font-medium">
                   +1 (724) 713-9241
                 </p>
               </div>
-              <div className='col-span-3'>
-                <span className='text-white/50 text-lg'>Email</span>
-                <p className='bg-transparent border-0 text-white text-lg'>
-                 sagar@upaya.com 
+
+              <div>
+                <p className="text-white/50 text-sm">Email</p>
+                <p className="text-lg font-medium">
+                  sagar@upaya.com
                 </p>
               </div>
-              <div className='col-span-6 pt-8'>
-                <span className='text-white/50 text-lg'>Location</span>
-                <p className='bg-transparent border-0 text-white text-lg'>
-                  Mark Avenue, Dalls Road, New York
+
+              <div className="col-span-2">
+                <p className="text-white/50 text-sm">Location</p>
+                <p className="text-lg font-medium">
+                  Mark Avenue, Dallas Road, New York
                 </p>
               </div>
             </div>
-            <div className='pt-12'>
-              <p className='text-white/50 pb-4 text-base'>Trusted by</p>
-              <div className='flex items-center flex-wrap md:gap-14 gap-7'>
-                <Image
-                  src='/images/contact/google-pay.png'
-                  alt='Google-pay'
-                  width={100}
-                  height={20}
-                  style={{ width: 'auto', height: 'auto' }}
-                  quality={100}
-                  className='w_f max-w-28 w-full h-5'
-                />
-                <Image
-                  src='/images/contact/play-juction.png'
-                  alt='play-juction'
-                  width={100}
-                  height={20}
-                  style={{ width: 'auto', height: 'auto' }}
-                  quality={100}
-                  className='w_f max-w-24 w-full h-6'
-                />
-                <Image
-                  src='/images/contact/stripe.png'
-                  alt='stripe'
-                  width={100}
-                  height={20}
-                  style={{ width: 'auto', height: 'auto' }}
-                  quality={100}
-                  className='w_f max-w-14 w-full h-6'
-                />
-                <Image
-                  src='/images/contact/wise.png'
-                  alt='wise'
-                  width={100}
-                  height={20}
-                  style={{ width: 'auto', height: 'auto' }}
-                  quality={100}
-                  className='w_f max-w-16 w-full h-4'
-                />
+
+            {/* TRUSTED LOGOS */}
+            <div className="pt-10">
+              <p className="text-white/50 mb-5">Trusted by</p>
+
+              <div className="flex flex-wrap gap-10 items-center opacity-70">
+                <Image src="/images/contact/google-pay.png" alt="" width={90} height={20}/>
+                <Image src="/images/contact/play-juction.png" alt="" width={90} height={20}/>
+                <Image src="/images/contact/stripe.png" alt="" width={70} height={20}/>
+                <Image src="/images/contact/wise.png" alt="" width={70} height={20}/>
               </div>
             </div>
           </div>
-          <div
-            data-aos='fade-right'
-            data-aos-delay='200'
-            data-aos-duration='1000'
-            className="relative before:content-[''] before:absolute before:bg-[url('/images/contact/form-line.png')] before:bg-no-repeat before:w-[13rem] before:h-24 before:top-5% before:bg-contain before:left-[35%] before:z-1 before:translate-x-full lg:before:inline-block before:hidden after:content-[''] after:absolute after:bg-[url('/images/contact/from-round-line.png')] after:bg-no-repeat after:w-[6.3125rem] after:h-[6.3125rem] after:bg-contain after:top-1/2 after:-left-[25%] after:z-1 after:translate-x-1/2 after:translate-y-1/2 md:after:inline-block after:hidden md:row-start-1 row-start-2 md:col-start-8 col-start-1 row-end-2 col-end-13">
-            <div className='lg:mt-0 mt-8  bg-white dark:bg-darkmode max-w-[50rem] m-auto pt-[2.1875rem] pb-8 px-[2.375rem] rounded-md relative z-10'>
-              <h2 className='sm:text-3xl text-lg font-bold text-midnight_text mb-3 dark:text-white'>
+
+          {/* ================= RIGHT FORM ================= */}
+          <div className="md:col-span-6 relative">
+
+            <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl p-10">
+
+              <h2 className="text-3xl font-semibold text-[#0f2c5c] mb-6">
                 Start Your Job Search With Us
               </h2>
-              <form className='flex w-full m-auto justify-between flex-wrap gap-4'>
-                <div className='flex gap-4'>
+
+              <form className="flex flex-wrap gap-4">
+
+                {/* NAME ROW */}
+                <div className="flex gap-4 w-full">
                   <input
-                    className='text-midnight_text w-full text-base transition-[0.5s] bg-transparent dark:border-dark_border dark:text-white px-[0.9375rem] py-[0.830rem] border border-border border-solid focus:border-primary dark:focus:border-primary placeholder:text-grey rounded-lg focus-visible:outline-0'
-                    type='text'
-                    placeholder='First name'
+                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary outline-none transition"
+                    type="text"
+                    placeholder="First name"
                   />
                   <input
-                    type='text'
-                    className='text-midnight_text w-full text-base transition-[0.5s] bg-transparent dark:border-dark_border dark:text-white px-[0.9375rem] py-[0.830rem] border border-border border-solid focus:border-primary dark:focus:border-primary placeholder:text-grey rounded-lg focus-visible:outline-0'
-                    placeholder='Last name'
+                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary outline-none transition"
+                    type="text"
+                    placeholder="Last name"
                   />
                 </div>
-                <div className='w-full'>
-                  <input
-                    type='email'
-                    className='text-midnight_text w-full text-base transition-[0.5s] bg-transparent dark:border-dark_border dark:text-white px-[0.9375rem] py-[0.830rem] border border-border border-solid focus:border-primary dark:focus:border-primary placeholder:text-grey rounded-lg focus-visible:outline-0'
-                    placeholder='youremail@website.com'
-                  />
+
+                <input
+                  type="email"
+                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary outline-none transition"
+                  placeholder="youremail@website.com"
+                />
+
+                <input
+                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary outline-none transition"
+                  type="text"
+                  placeholder="Country"
+                />
+
+                <textarea
+                  className="h-36 w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary outline-none transition"
+                  placeholder="I have read and acknowledge"
+                />
+
+                {/* CHECKBOX */}
+                <div className="flex items-start gap-2 text-sm text-gray-600">
+                  <input type="checkbox" className="mt-1 accent-[#2563eb]" />
+                  <p>
+                    I have read and acknowledge the{" "}
+                    <span className="text-[#2563eb] font-medium cursor-pointer">
+                      Terms and Conditions
+                    </span>
+                  </p>
                 </div>
-                <div className='w-full'>
-                  <input
-                    className='text-midnight_text w-full text-base transition-[0.5s] bg-transparent dark:border-dark_border dark:text-white px-[0.9375rem] py-[0.830rem] border border-border border-solid focus:border-primary dark:focus:border-primary placeholder:text-grey rounded-lg focus-visible:outline-0'
-                    type='text'
-                    placeholder='Country'
-                  />
-                </div>
-                <div className='w-full'>
-                  <textarea
-                    className='text-midnight_text h-[9.375rem] w-full text-base transition-[0.5s] bg-transparent dark:border-dark_border dark:text-white px-[0.9375rem] py-[0.830rem] border! border-border border-solid! focus:border-primary dark:focus:border-primary placeholder:text-grey rounded-lg focus-visible:outline-0'
-                    placeholder='I have read and acknowledge'></textarea>
-                </div>
-                <div className='flex'>
-                  <input
-                    id='wp-comment-cookies-consent'
-                    name='wp-comment-cookies-consent'
-                    type='checkbox'
-                    value='yes'
-                    className="hover:opacity-1 checked:bg-primary checked:opacity-1 relative border-2 border-solid border-primary rounded-xs bg-none cursor-pointer leading-none mr-2 outline-0 p-0! align-text-top h-[1.25rem] sm:w-[1.25rem] w-[2.25rem] opacity-[0.5] before:content-[''] before:absolute before:right-1/2 before:top-1/2 before:w-1 before:h-2 before:z-2 before:-mt-[0.0625rem] before:-ml-[0.0625rem] before:-mr-[0.0625rem] before:transform before:rotate-45 before:translate-x-[-50%] before:translate-y-[-50%] dark:focus:border-primary"
-                  />
-                  <div className='text-grey dark:text-white/50'>
-                    I have read and acknowledge the{' '}
-                    <p className='text-primary inline cursor-pointer'>
-                      Terms and Conditions{' '}
-                    </p>
-                  </div>
-                </div>
-                <div className='w-full'>
-                  <button
-                    className='w-full bg-primary hover:bg-blue-700 text-white py-3 rounded-lg'
-                    type='submit'>
-                    Submit Inquiry
-                  </button>
-                </div>
+
+                {/* BUTTON */}
+                <button
+                  className="w-full mt-2 py-4 rounded-xl text-white font-semibold
+                  bg-gradient-to-r from-[#3b82f6] to-[#2563eb]
+                  hover:shadow-xl hover:-translate-y-[2px]
+                  transition-all duration-300"
+                  type="submit">
+                  Submit Inquiry
+                </button>
               </form>
             </div>
+
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Contactform
+export default Contactform;

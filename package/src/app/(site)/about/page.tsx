@@ -1,64 +1,102 @@
-import React from "react";
-import HeroSub from "@/components/SharedComponent/HeroSub";
-import { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "About | Venus",
+import React from "react";
+import { motion } from "framer-motion";
+
+/* ================= ANIMATION ================= */
+
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6 },
+  },
 };
 
 const page = () => {
-  const breadcrumbLinks = [
-    { href: "/", text: "Home" },
-    { href: "/about", text: "About" },
-  ];
-
   return (
     <>
-      {/* ⭐ HERO SUB HEADER */}
-      {/* <HeroSub
-        title="About Us"
-        description="Discover a wealth of insightful materials meticulously crafted to provide you with a comprehensive understanding of the latest trends."
-        breadcrumbLinks={breadcrumbLinks}
-      /> */}
-      <section className="relative overflow-hidden pt-32 pb-20 bg-gradient-to-b from-white via-[#f8fafc] to-white">
+      {/* ================= HERO SECTION ================= */}
 
-        {/* 🌟 SIGNATURE BACKGROUND GLOW */}
+      <section className="relative overflow-hidden pt-36 pb-28 bg-gradient-to-b from-[#f8fbff] to-white">
+
+        {/* center glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-primary/20 blur-[140px] rounded-full opacity-40"></div>
+
+        {/* side glow */}
         <div className="absolute -top-40 -left-32 w-[420px] h-[420px] bg-blue-100/50 rounded-full blur-3xl"></div>
         <div className="absolute -bottom-40 -right-32 w-[420px] h-[420px] bg-indigo-100/50 rounded-full blur-3xl"></div>
 
-        <div className="container mx-auto max-w-4xl px-4 text-center relative z-10">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="relative container mx-auto max-w-5xl px-6 text-center"
+        >
 
-          {/* ⭐ SMALL LABEL */}
-          <span className="text-primary text-xs font-semibold tracking-[0.35em] uppercase">
+          {/* LABEL */}
+          <motion.span
+            variants={fadeUp}
+            className="text-primary text-xs font-semibold tracking-[0.45em] uppercase"
+          >
             About Us
-          </span>
+          </motion.span>
 
-          {/* ⭐ SIGNATURE GRADIENT TITLE */}
-          <h1 className="mt-6 text-[38px] md:text-[46px] font-semibold tracking-tight leading-[1.15] bg-gradient-to-r from-midnight_text to-slate-500 bg-clip-text text-transparent">
+          {/* TITLE */}
+          <motion.h1
+            variants={fadeUp}
+            className="mt-6 text-[40px] md:text-[56px] font-semibold leading-tight text-midnight_text"
+          >
             Designing smarter digital experiences
-            <br className="hidden md:block" />
-            for modern businesses.
-          </h1>
+            <br />
+            <span className="bg-gradient-to-r from-midnight_text to-slate-500 bg-clip-text text-transparent">
+              for modern businesses.
+            </span>
+          </motion.h1>
 
-          {/* ⭐ DESCRIPTION */}
-          <p className="mt-6 text-grey text-[17px] leading-relaxed max-w-2xl mx-auto">
+          {/* DESCRIPTION */}
+          <motion.p
+            variants={fadeUp}
+            className="mt-6 text-lg text-DeepOcean max-w-2xl mx-auto"
+          >
             We help brands grow with powerful design, scalable technology, and
             user-focused solutions that deliver real impact.
-          </p>
+          </motion.p>
 
-          {/* ⭐ GLASSMORPHISM BREADCRUMB (SIGNATURE STYLE) */}
-          <div className="mt-10 inline-flex items-center gap-3 backdrop-blur-md bg-white/60 px-6 py-3 rounded-full shadow-md border border-white/40 text-sm">
-            <a href="/" className="hover:text-primary transition">Home</a>
-            <span className="opacity-40">/</span>
-            <span className="text-midnight_text font-medium">About</span>
-          </div>
+          {/* BREADCRUMB */}
+          <motion.div
+            variants={fadeUp}
+            className="mt-10 inline-flex items-center gap-3 bg-white/70 backdrop-blur-xl px-6 py-3 rounded-full shadow-lg border border-gray-200 text-sm"
+          >
+            <a href="/" className="text-DeepOcean hover:text-primary transition">
+              Home
+            </a>
 
-          {/* ⭐ SIGNATURE UNDERLINE */}
-          <div className="w-20 h-[3px] bg-gradient-to-r from-primary/40 to-primary mx-auto mt-10 rounded-full"></div>
+            <span className="text-gray-400">/</span>
 
-        </div>
+            <span className="font-medium text-midnight_text">
+              About
+            </span>
+          </motion.div>
+
+          {/* UNDERLINE */}
+          <motion.div
+            variants={fadeUp}
+            className="w-24 h-[4px] bg-gradient-to-r from-primary/40 to-primary mx-auto mt-12 rounded-full"
+          />
+
+        </motion.div>
       </section>
-
 
 
       {/* 🔥 HERO SECTION — DESIGN FIXED */}
@@ -108,7 +146,7 @@ const page = () => {
                 poster="/images/hero/about-us-image-top.jpg"
                 className="w-full h-full object-cover"
               >
-                <source src="/videos/about-hero.mp4" type="video/mp4" />
+                <source src="public/videos/about-hero.mp4" type="video/mp4" />
               </video>
             </div>
           </div>

@@ -1,110 +1,117 @@
 "use client";
-import { signIn, useSession } from "next-auth/react";
+
+import { signIn } from "next-auth/react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import SocialSignIn from "../SocialSignIn";
 import Logo from "@/components/Layout/Header/Logo";
-import Loader from "@/components/Common/Loader";
-import toast, { Toaster } from "react-hot-toast";
 import AuthDialogContext from "@/app/context/AuthDialogContext";
 
 const Signin = ({ signInOpen }: { signInOpen?: any }) => {
-  const { data: session } = useSession();
+
   const [username, setUsername] = useState("admin");
-  const [password, setPassword] = useState("admin123");
-  const [error, setError] = useState("");
+  const [password, setPassword] = useState("");
+
   const authDialog = useContext(AuthDialogContext);
 
   const handleSubmit = async (e: any) => {
-    const notify = () => toast("Here is your toast.");
+
     e.preventDefault();
+
     const result = await signIn("credentials", {
       redirect: false,
       username,
       password,
     });
-    if (result?.error) {
-      // Handle successful sign-in
-      setError(result.error);
-    }
+
     if (result?.status === 200) {
+
       setTimeout(() => {
         signInOpen(false);
-      }, 1200);
+      }, 1000);
+
       authDialog?.setIsSuccessDialogOpen(true);
+
       setTimeout(() => {
         authDialog?.setIsSuccessDialogOpen(false);
-      }, 1100);
-    } else {
-      authDialog?.setIsFailedDialogOpen(true);
-      setTimeout(() => {
-        authDialog?.setIsFailedDialogOpen(false);
-      }, 1100);
+      }, 1000);
+
     }
+
   };
 
   return (
-    <>
-      <div className="mb-10 text-center mx-auto inline-block max-w-[160px]">
+
+    <div className="w-full">
+
+      <div className="flex justify-center mb-6 mt-1 scale-90">
         <Logo />
       </div>
 
       <SocialSignIn />
 
-      <span className="z-1 relative my-8 block text-center">
-        <span className="-z-1 absolute left-0 top-1/2 block h-px w-full bg-border dark:bg-dark_border"></span>
-        <span className="text-body-secondary relative z-10 inline-block bg-white px-3 text-base dark:bg-darklight">
+      <div className="relative my-6 text-center">
+
+        <span className="absolute left-0 top-1/2 w-full h-px bg-gray-200"></span>
+
+        <span className="relative bg-white px-3 text-xs text-gray-500">
           OR
         </span>
-        <Toaster />
-      </span>
+
+      </div>
 
       <form onSubmit={handleSubmit}>
-        <div className="mb-[22px]">
+
+        <div className="mb-4">
+
           <input
             type="text"
             placeholder="Username"
-            required
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className="w-full rounded-md border placeholder:text-gray-400  border-border dark:border-dark_border border-solid bg-transparent px-5 py-3 text-base text-dark outline-hidden transition  focus:border-primary focus-visible:shadow-none dark:border-border_color dark:text-white dark:focus:border-primary"
+            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
           />
+
         </div>
-        <div className="mb-[22px]">
+
+        <div className="mb-4">
+
           <input
             type="password"
-            required
-            value={password}
             placeholder="Password"
+            value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full rounded-md border border-border dark:border-dark_border border-solid bg-transparent px-5 py-3 text-base text-dark outline-hidden transition  focus:border-primary focus-visible:shadow-none dark:border-border_color dark:text-white dark:focus:border-primary"
+            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
           />
+
         </div>
-        <div className="mb-9">
-          <button
-            type="submit"
-            className="flex w-full cursor-pointer items-center justify-center rounded-md border border-primary bg-primary hover:bg-darkprimary dark:hover:bg-darkprimary! px-5 py-3 text-base text-white transition duration-300 ease-in-out "
-          >
-            Sign In
-            {/* {loading && <Loader />} */}
-          </button>
-        </div>
+
+        <button
+          type="submit"
+          className="w-full rounded-lg bg-primary py-3 text-sm font-medium text-white mt-3 hover:bg-blue-700 transition"
+        >
+          Sign In
+        </button>
+
       </form>
 
-      <Link
-        href="/"
-        className="mb-2 inline-block text-base text-dark hover:text-primary dark:text-white dark:hover:text-primary"
-      >
-        Forget Password?
-      </Link>
-      <p className="text-body-secondary text-base">
-        Not a member yet?{" "}
-        <Link href="/" className="text-primary hover:underline">
-          Sign Up
+      <div className="text-center mt-6 text-sm">
+
+        <Link href="/" className="block mb-2 hover:text-primary">
+          Forget Password?
         </Link>
-      </p>
-    </>
+
+        <span>
+          Not a member yet{" "}
+          <Link href="/" className="text-primary hover:underline">
+            Sign Up
+          </Link>
+        </span>
+
+      </div>
+
+    </div>
+
   );
 };
 
