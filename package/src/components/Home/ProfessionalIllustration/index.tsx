@@ -5,7 +5,6 @@ const ProfessionalIllustration = () => {
     <svg
       viewBox="0 0 450 550"
       width="100%"
-      height="auto"
       xmlns="http://www.w3.org/2000/svg"
       className="drop-shadow-lg"
     >
@@ -39,7 +38,7 @@ const ProfessionalIllustration = () => {
       {/* Person - Sitting with laptop */}
       {/* Head */}
       <circle cx="180" cy="220" r="28" fill="url(#skinTone)" />
-      
+
       {/* Hair - Dark brown */}
       <path
         d="M 152 220 Q 152 190 180 180 Q 208 190 208 220 L 208 260 Q 208 270 180 275 Q 152 270 152 260 Z"
@@ -50,10 +49,10 @@ const ProfessionalIllustration = () => {
       {/* Eyes */}
       <circle cx="170" cy="210" r="3" fill="#2d1810" />
       <circle cx="190" cy="210" r="3" fill="#2d1810" />
-      
+
       {/* Nose */}
       <line x1="180" y1="215" x2="180" y2="230" stroke="#c9a878" strokeWidth="1.5" />
-      
+
       {/* Mouth */}
       <path
         d="M 170 240 Q 180 245 190 240"
@@ -108,20 +107,20 @@ const ProfessionalIllustration = () => {
       <g id="laptop">
         {/* Screen back */}
         <rect x="260" y="200" width="140" height="90" fill="#34495e" rx="6" />
-        
+
         {/* Screen display - Light blue glow */}
         <rect x="268" y="210" width="124" height="74" fill="#ecf0f1" rx="3" />
-        
+
         {/* Code/content lines on screen */}
         <line x1="278" y1="225" x2="376" y2="225" stroke="#95a5a6" strokeWidth="1.5" />
         <line x1="278" y1="235" x2="376" y2="235" stroke="#95a5a6" strokeWidth="1.5" />
         <line x1="278" y1="245" x2="340" y2="245" stroke="#95a5a6" strokeWidth="1.5" />
         <line x1="278" y1="260" x2="376" y2="260" stroke="#95a5a6" strokeWidth="1.5" />
         <line x1="278" y1="270" x2="376" y2="270" stroke="#95a5a6" strokeWidth="1.5" />
-        
+
         {/* Keyboard */}
         <rect x="260" y="288" width="140" height="35" fill="#2c3e50" rx="2" />
-        
+
         {/* Keyboard keys pattern */}
         <g opacity="0.4">
           <rect x="270" y="295" width="5" height="5" fill="#ecf0f1" />
@@ -143,7 +142,7 @@ const ProfessionalIllustration = () => {
           d="M 70 420 L 80 450 L 100 450 L 110 420 Z"
           fill="#c19a6b"
         />
-        
+
         {/* Plant leaves */}
         <ellipse cx="85" cy="395" rx="8" ry="25" fill="#27ae60" transform="rotate(-25 85 395)" />
         <ellipse cx="95" cy="390" rx="8" ry="25" fill="#2ecc71" transform="rotate(25 95 390)" />

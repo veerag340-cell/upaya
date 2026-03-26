@@ -5,13 +5,12 @@ const CareerGrowthIllustration = () => {
     <svg
       viewBox="0 0 400 500"
       width="100%"
-      height="auto"
       xmlns="http://www.w3.org/2000/svg"
       className="drop-shadow-lg"
     >
       {/* Background */}
       <rect width="400" height="500" fill="#f8fafc" rx="20" />
-      
+
       {/* Resume Card */}
       <rect x="30" y="40" width="140" height="180" fill="white" stroke="#e2e8f0" strokeWidth="2" rx="10" />
       <circle cx="60" cy="70" r="15" fill="#4f46e5" opacity="0.2" />
