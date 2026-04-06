@@ -16,10 +16,10 @@ const Footer: FC = () => {
 
           {/* ================= ABOUT ================= */}
           <div className="md:col-span-5">
-            <h3 className="text-2xl font-semibold mb-4">About Upaya</h3>
+            <h3 className="text-2xl font-semibold mb-4">About UpayaInd</h3>
 
             <p className="text-white/60 leading-relaxed max-w-md">
-              Upaya helps professionals land their dream jobs faster with
+              UpayaInd helps professionals land their dream jobs faster with
               AI-powered applications, expert interview preparation, and
               smart career tools.
             </p>
@@ -51,8 +51,8 @@ const Footer: FC = () => {
 
               <div>
                 <p className="text-white font-medium">Email</p>
-                <Link href="mailto:sagar@upaya.com" className="hover:text-[#3b82f6]">
-                  sagar@upaya.com
+                <Link href="mailto:sagar@upayaind.com" className="hover:text-[#3b82f6]">
+                  sagar@UpayaInd.com
                 </Link>
               </div>
             </div>
@@ -129,7 +129,7 @@ const Footer: FC = () => {
 
         <p className="text-white/40 text-sm">
           © All rights reserved. Made by{" "}
-          <span className="text-[#3b82f6]">Upaya Team</span>
+          <span className="text-[#3b82f6]">UpayaInd Team</span>
         </p>
       </div>
     </footer>

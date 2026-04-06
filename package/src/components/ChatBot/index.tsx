@@ -19,7 +19,7 @@ export default function ChatBot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "bot",
-      text: "Hi 👋 Welcome to UPAYA Career Assistant.\nMay I know your name?"
+      text: "Hi 👋 Welcome to UpayaInd Career Assistant.\nMay I know your name?"
     }
   ])
   const [step, setStep] = useState<number>(1)
@@ -93,7 +93,7 @@ export default function ChatBot() {
 
           {/* Header */}
           <div className="bg-[#0f2e4a] text-white px-4 py-3 flex items-center justify-between">
-            <span className="font-medium">UPAYA Career Assistant</span>
+            <span className="font-medium">UPAYAIND Career Assistant</span>
             <button onClick={() => setOpen(false)}>✕</button>
           </div>
 

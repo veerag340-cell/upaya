@@ -22,10 +22,8 @@ const fadeUp = {
 export default function Page() {
   return (
     <>
-      {/* ================= ULTRA PREMIUM HERO ================= */}
+      {/* ================= HERO ================= */}
       <section className="relative overflow-hidden pt-32 pb-24 text-center bg-gradient-to-b from-[#f8fbff] to-white dark:from-darkmode dark:to-darkmode">
-        
-        {/* SOFT GLOW BACKGROUND */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-primary/20 blur-[140px] rounded-full opacity-40"></div>
 
         <motion.div
@@ -43,9 +41,9 @@ export default function Page() {
 
           <motion.h1
             variants={fadeUp}
-            className="mt-6 text-[36px] md:text-[52px] font-semibold leading-tight text-midnight_text dark:text-white"
+            className="mt-6 text-[36px] md:text-[52px] font-semibold"
           >
-            Let’s Build Something <br /> Amazing Together
+            Let’s Build Something Amazing Together
           </motion.h1>
 
           <motion.p
@@ -55,26 +53,15 @@ export default function Page() {
             Whether you’re exploring new opportunities or need expert guidance,
             our global team is here to help you move forward faster.
           </motion.p>
-
-          {/* PREMIUM BREADCRUMB */}
-          <motion.div
-            variants={fadeUp}
-            className="mt-10 inline-flex items-center gap-3 bg-white/70 backdrop-blur-xl dark:bg-darklight px-6 py-3 rounded-full shadow-lg border border-gray-200 dark:border-dark_border"
-          >
-            <span className="text-DeepOcean dark:text-white/60">Home</span>
-            <span>/</span>
-            <span className="font-medium">Contact</span>
-          </motion.div>
         </motion.div>
       </section>
 
-      {/* ================= GLASS CONTACT CARDS ================= */}
+      {/* ================= CONTACT CARDS ================= */}
       <section className="py-20 bg-white dark:bg-darkmode">
         <motion.div
           variants={container}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true }}
           className="container mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-10"
         >
           {["Email Support", "Career Opportunities"].map((title, i) => (
@@ -82,10 +69,10 @@ export default function Page() {
               key={i}
               variants={fadeUp}
               whileHover={{ y: -6 }}
-              className="bg-white/60 backdrop-blur-xl dark:bg-darklight rounded-2xl p-10 border border-gray-200 dark:border-dark_border shadow-sm hover:shadow-xl transition"
+              className="bg-white rounded-2xl p-10 border shadow-sm hover:shadow-xl transition"
             >
               <h3 className="text-xl font-semibold mb-2">{title}</h3>
-              <p className="text-DeepOcean dark:text-white/60 mb-4">
+              <p className="mb-4">
                 Our team will respond quickly and guide you through every step.
               </p>
               <Link href="#" className="text-primary font-medium">
@@ -96,60 +83,51 @@ export default function Page() {
         </motion.div>
       </section>
 
-      {/* ================= FLOATING CONSULTATION FORM ================= */}
-      <section className="py-24 bg-gray-50 dark:bg-darkmode">
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="container mx-auto max-w-6xl px-4 grid md:grid-cols-12 gap-16 items-center"
-        >
-          <motion.div
-            variants={fadeUp}
-            className="col-span-6 bg-white dark:bg-darklight rounded-3xl shadow-xl p-10"
-          >
-            <h2 className="text-[36px] font-semibold mb-8">
-              Get Online Consultation
-            </h2>
+      {/* ================= GLOBAL REACH MAP ================= */}
+      {/* ================= GLOBAL REACH MAP ================= */}
+      <section className="py-24 bg-gradient-to-b from-[#f8fbff] to-white relative">
+        <div className="text-center mb-14">
+          <h2 className="text-[42px] font-bold text-midnight_text mb-4">
+            Our Global Reach
+          </h2>
+          <p className="text-DeepOcean text-lg">
+            We support job seekers across USA and India.
+          </p>
+        </div>
 
-            <form className="grid grid-cols-2 gap-5">
-              <input className="inputUltra" placeholder="First Name*" />
-              <input className="inputUltra" placeholder="Last Name*" />
-              <input className="inputUltra col-span-2" placeholder="Email*" />
+        <div className="container mx-auto max-w-4xl px-4">
+          <div className="relative w-fit mx-auto">
 
-              <select className="inputUltra col-span-2">
-                <option>Choose a specialist</option>
-                <option>Consulting</option>
-                <option>Development</option>
-              </select>
+            {/* Glow background */}
+            <div className="absolute left-1/2 -translate-x-1/2 top-10 w-[500px] h-[250px] bg-blue-200/30 blur-[120px] rounded-full"></div>
 
-              <input type="date" className="inputUltra" />
-              <input type="time" className="inputUltra" />
-
-              <button className="col-span-2 bg-primary text-white py-4 rounded-xl hover:scale-[1.02] transition">
-                Make an appointment
-              </button>
-            </form>
-          </motion.div>
-
-          <motion.div
-            variants={fadeUp}
-            whileHover={{ scale: 1.02 }}
-            className="col-span-6"
-          >
-            <Image
-              src="/images/contact-page/contact.jpg"
-              alt="contact"
-              width={1200}
-              height={800}
-              className="rounded-3xl shadow-lg"
+            {/* Map */}
+            <img
+              src="/images/map/world-map.png"
+              alt="World Map"
+              className="w-[600px] md:w-[700px] opacity-90 relative z-10"
             />
-          </motion.div>
-        </motion.div>
-      </section>
 
-      {/* ================= GLOBAL OFFICES ================= */}
+            {/* USA - Correct Position */}
+            <div className="absolute z-20" style={{ top: "41%", left: "27%" }}>
+              <span className="relative flex h-4 w-4">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-4 w-4 bg-blue-600"></span>
+              </span>
+            </div>
+
+            {/* India - Hyderabad Correct Position */}
+            <div className="absolute z-20" style={{ top: "56%", left: "69%" }}>
+              <span className="relative flex h-4 w-4">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-4 w-4 bg-red-600"></span>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      {/* ================= OUR OFFICES ================= */}
       <section className="py-24 bg-white dark:bg-darkmode">
         <div className="text-center mb-14">
           <h2 className="text-[40px] font-semibold">Our Offices</h2>
@@ -158,49 +136,20 @@ export default function Page() {
           </p>
         </div>
 
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="container mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-10"
-        >
-          {[
-            {
-              title: "India Head Office 🇮🇳",
-              address:
-                "Upaya Technologies Pvt Ltd, Bengaluru, Karnataka 560025",
-            },
-            {
-              title: "USA Office 🇺🇸",
-              address: "548 Market Street, San Francisco, CA 94104",
-            },
-          ].map((office, i) => (
-            <motion.div
-              key={i}
-              variants={fadeUp}
-              whileHover={{ y: -8 }}
-              className="bg-gray-50 dark:bg-darklight rounded-2xl p-10 border border-gray-200 dark:border-dark_border hover:shadow-xl transition"
-            >
-              <h3 className="text-2xl font-semibold mb-4">{office.title}</h3>
-              <p className="text-DeepOcean dark:text-white/60">
-                {office.address}
-              </p>
-            </motion.div>
-          ))}
-        </motion.div>
-      </section>
+        <div className="container mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-10">
+          <div className="bg-gray-50 rounded-2xl p-10 border hover:shadow-xl transition">
+            <h3 className="text-2xl font-semibold mb-4">
+              India Head Office 🇮🇳
+            </h3>
+            <p>Bengaluru, Karnataka, India</p>
+          </div>
 
-      {/* INPUT STYLE */}
-      <style jsx>{`
-        .inputUltra {
-          width: 100%;
-          padding: 14px 16px;
-          border-radius: 12px;
-          border: 1px solid #e5e7eb;
-          background: transparent;
-        }
-      `}</style>
+          <div className="bg-gray-50 rounded-2xl p-10 border hover:shadow-xl transition">
+            <h3 className="text-2xl font-semibold mb-4">USA Office 🇺🇸</h3>
+            <p>San Francisco, CA, USA</p>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

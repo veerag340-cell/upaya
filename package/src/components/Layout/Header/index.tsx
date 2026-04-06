@@ -99,7 +99,7 @@ const Header: React.FC = () => {
           </nav>
 
           {/* Right Section */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-5 ml-4">
 
             {/* Sign In */}
             <motion.button
