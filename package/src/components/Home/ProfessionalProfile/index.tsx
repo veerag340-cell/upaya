@@ -1,4 +1,6 @@
 import React from 'react'
+import Link from "next/link";
+
 import ProfessionalIllustration from '@/components/Home/ProfessionalIllustration'
 
 const ProfessionalProfile = () => {
@@ -44,12 +46,16 @@ const ProfessionalProfile = () => {
               data-aos-delay='300'
               data-aos-duration='1000'
             >
+              <Link href="/contact">
               <button className='bg-primary text-white font-semibold px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors duration-300'>
                 Get Started
               </button>
+              </Link>
+              <Link href="/about">
               <button className='border border-primary text-primary font-semibold px-8 py-3 rounded-lg hover:bg-primary hover:text-white transition-colors duration-300 dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-midnight_text'>
                 Learn More
               </button>
+              </Link>
             </div>
 
             {/* Info Box */}

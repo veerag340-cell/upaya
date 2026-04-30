@@ -44,13 +44,6 @@ const page = () => {
           className="relative container mx-auto max-w-5xl px-6 text-center"
         >
 
-          {/* LABEL */}
-          <motion.span
-            variants={fadeUp}
-            className="text-primary text-xs font-semibold tracking-[0.45em] uppercase"
-          >
-            About Us
-          </motion.span>
 
           {/* TITLE */}
           <motion.h1
@@ -122,7 +115,7 @@ const page = () => {
               ].map((item, i) => (
                 <li key={i} className="flex items-center gap-3 text-grey dark:text-white/70">
                   {/* //<svg width="20" height="20" viewBox="0 0 20 20"> */}
-                    <svg className="w-5 h-5" viewBox="0 0 20 20" fill="none">
+                  <svg className="w-5 h-5" viewBox="0 0 20 20" fill="none">
                     <circle cx="10" cy="10" r="9" stroke="#2563eb" strokeWidth="2" fill="white" />
                     <path d="M6.5 10.5l2 2 4-4" stroke="#2563eb" strokeWidth="2" />
                   </svg>

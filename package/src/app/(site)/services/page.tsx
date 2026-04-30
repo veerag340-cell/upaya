@@ -36,13 +36,6 @@ const page = () => {
           className="container mx-auto max-w-4xl px-4 text-center relative z-10"
         >
 
-          {/* LABEL */}
-          <motion.span
-            variants={fadeUp}
-            className="text-primary text-xs font-semibold tracking-[0.35em] uppercase"
-          >
-            Our Services
-          </motion.span>
 
           {/* TITLE */}
           <motion.h1

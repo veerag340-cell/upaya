@@ -86,12 +86,6 @@ export default function PricingPage() {
           className="relative container mx-auto max-w-4xl px-4"
         >
 
-          <motion.span
-            variants={fadeUp}
-            className="text-primary text-xs font-semibold tracking-[0.4em] uppercase"
-          >
-            Pricing Plans
-          </motion.span>
 
           <motion.h1
             variants={fadeUp}
@@ -116,8 +110,13 @@ export default function PricingPage() {
             <span className="font-medium">Pricing</span>
           </motion.div>
 
-        </motion.div>
+          {/* ✅ UNDERLINE (add here) */}
+          <motion.div
+            variants={fadeUp}
+            className="w-20 h-[3px] bg-gradient-to-r from-primary/40 to-primary mx-auto mt-10 rounded-full"
+          />
 
+        </motion.div>
       </section>
 
       {/* ================= PRICING SECTION ================= */}
@@ -206,8 +205,8 @@ export default function PricingPage() {
                 <div
                   key={plan.id}
                   className={`relative rounded-3xl p-10 border transition-all hover:-translate-y-3 hover:shadow-2xl ${plan.highlighted
-                      ? "border-primary bg-white shadow-xl scale-[1.03]"
-                      : "border-border bg-white"
+                    ? "border-primary bg-white shadow-xl scale-[1.03]"
+                    : "border-border bg-white"
                     } flex flex-col items-center`}
                 >
 
@@ -248,8 +247,8 @@ export default function PricingPage() {
 
                   <button
                     className={`w-full py-3 rounded-xl font-semibold ${plan.highlighted
-                        ? "bg-primary text-white"
-                        : "bg-SkyBlueMist text-primary hover:bg-primary hover:text-white"
+                      ? "bg-primary text-white"
+                      : "bg-SkyBlueMist text-primary hover:bg-primary hover:text-white"
                       }`}
                   >
                     {plan.cta}

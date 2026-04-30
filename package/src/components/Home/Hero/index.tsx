@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import Image from "next/image"
+import SignUp from "../../Auth/SignUp";
 import Link from "next/link"
 import { motion } from "framer-motion"
 
@@ -117,10 +118,10 @@ export default function Hero() {
             </motion.p>
 
             <motion.div variants={fadeUp} className="flex gap-4 flex-wrap">
-              <Link href="#" className="px-9 py-3 rounded-xl bg-blue-600 text-white font-semibold shadow-lg">
+              <Link href="#about" className="px-9 py-3 rounded-xl bg-blue-600 text-white font-semibold shadow-lg">
                 Apply Jobs for Me
               </Link>
-              <Link href="#" className="px-9 py-3 rounded-xl backdrop-blur-lg bg-white/70 border border-gray-200 text-blue-600 font-semibold">
+              <Link href="/contact" className="px-9 py-3 rounded-xl backdrop-blur-lg bg-white/70 border border-gray-200 text-blue-600 font-semibold">
                 Get Career Support
               </Link>
             </motion.div>
@@ -201,16 +202,16 @@ export default function Hero() {
         transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
       >
         {/* Logos Row 1 */}
-        <Image src="/images/companies/amazon-logo-transparent.png" alt="Amazon" width={130} height={60} className="grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300" />
-        <Image src="/images/companies/Infosys_logo.png" alt="Infosys" width={130} height={60} className="grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300" />
-        <Image src="/images/companies/Microsoft_logo.webp" alt="Microsoft" width={130} height={60} className="grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300" />
-        <Image src="/images/companies/Tata_Consultancy_Services.png" alt="TCS" width={130} height={60} className="grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300" />
+        <Image src="/images/companies/amazon-logo-transparent.png" alt="Amazon" width={130} height={60}  />
+        <Image src="/images/companies/Infosys_logo.png" alt="Infosys" width={130} height={60}  />
+        <Image src="/images/companies/Microsoft_logo.webp" alt="Microsoft" width={130} height={60}  />
+        <Image src="/images/companies/Tata_Consultancy_Services.png" alt="TCS" width={130} height={60} />
 
         {/* Duplicate Logos for Infinite Scroll */}
-        <Image src="/images/companies/amazon-logo-transparent.png" alt="Amazon" width={130} height={60} className="grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300" />
-        <Image src="/images/companies/Infosys_logo.png" alt="Infosys" width={130} height={60} className="grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300" />
-        <Image src="/images/companies/Microsoft_logo.webp" alt="Microsoft" width={130} height={60} className="grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300" />
-        <Image src="/images/companies/Tata_Consultancy_Services.png" alt="TCS" width={130} height={60} className="grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300" />
+        <Image src="/images/companies/amazon-logo-transparent.png" alt="Amazon" width={130} height={60} />
+        <Image src="/images/companies/Infosys_logo.png" alt="Infosys" width={130} height={60}  />
+        <Image src="/images/companies/Microsoft_logo.webp" alt="Microsoft" width={130} height={60}  />
+        <Image src="/images/companies/Tata_Consultancy_Services.png" alt="TCS" width={130} height={60}  />
       </motion.div>
 
     </div>

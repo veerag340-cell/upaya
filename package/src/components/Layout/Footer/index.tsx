@@ -51,8 +51,8 @@ const Footer: FC = () => {
 
               <div>
                 <p className="text-white font-medium">Email</p>
-                <Link href="mailto:sagar@upayaind.com" className="hover:text-[#3b82f6]">
-                  sagar@UpayaInd.com
+                <Link href="mailto:contact@upayaind.com" className="hover:text-[#3b82f6]">
+                  contact@upayaind.com
                 </Link>
               </div>
             </div>
