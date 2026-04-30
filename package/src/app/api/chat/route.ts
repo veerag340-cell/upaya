@@ -65,7 +65,7 @@ export async function POST(req: Request){
         if(resend){
           await resend.emails.send({
             from: "onboarding@resend.dev",
-            to: "veerag340@gmail.com",
+            to: "contact@upayaind.com",
             subject: "🚀 New Inquiry from UpayaInd Website",
             html: `
               <strong>Name:</strong> ${updatedLead.name}<br/>
