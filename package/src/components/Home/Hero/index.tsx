@@ -118,10 +118,10 @@ export default function Hero() {
             </motion.p>
 
             <motion.div variants={fadeUp} className="flex gap-4 flex-wrap">
-              <Link href="#about" className="px-9 py-3 rounded-xl bg-blue-600 text-white font-semibold shadow-lg">
+              {/* <Link href="#about" className="px-9 py-3 rounded-xl bg-blue-600 text-white font-semibold shadow-lg">
                 Apply Jobs for Me
-              </Link>
-              <Link href="/contact" className="px-9 py-3 rounded-xl backdrop-blur-lg bg-white/70 border border-gray-200 text-blue-600 font-semibold">
+              </Link> */}
+              <Link href="/contact" className="px-9 py-3 rounded-xl bg-blue-600 text-white font-semibold shadow-lg">
                 Get Career Support
               </Link>
             </motion.div>
